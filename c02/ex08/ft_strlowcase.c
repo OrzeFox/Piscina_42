@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncopy.c                                      :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dicruz <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: dicruz <dicruz@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 21:00:07 by dicruz            #+#    #+#             */
-/*   Updated: 2024/07/08 21:04:50 by dicruz           ###   ########.fr       */
+/*   Created: 2024/07/09 13:25:44 by dicruz            #+#    #+#             */
+/*   Updated: 2024/07/09 13:25:44 by dicruz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char    *ft_strlowcase(char *str)
 {
-	unsigned int	i;
+    unsigned int i;
 
-	i = 0;
-	while (src[i] != '\0' && n > i)
-	{
-		dest[i] = src[i];
-		i++;
-		
-	}
-	while(n > i){
-		dest[i] = '\0';
-		i++;
-	}
-	return(dest);
+    i = 0;
+    while (str[i])
+    {
+        if(str[i] >= 65 && str[i] <= 90)
+        {
+            str[i] += 32;
+        }
+        i++;
+    }
+    return(str);
 }

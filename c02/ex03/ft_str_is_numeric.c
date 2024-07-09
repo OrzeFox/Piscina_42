@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncopy.c                                      :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dicruz <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: dicruz <dicruz@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 21:00:07 by dicruz            #+#    #+#             */
-/*   Updated: 2024/07/08 21:04:50 by dicruz           ###   ########.fr       */
+/*   Created: 2024/07/09 12:44:25 by dicruz            #+#    #+#             */
+/*   Updated: 2024/07/09 12:44:25 by dicruz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int     ft_str_is_numeric(char *str)
 {
-	unsigned int	i;
+    unsigned int i;
 
-	i = 0;
-	while (src[i] != '\0' && n > i)
-	{
-		dest[i] = src[i];
-		i++;
-		
-	}
-	while(n > i){
-		dest[i] = '\0';
-		i++;
-	}
-	return(dest);
+    i = 0;
+    while (str[i])
+    {
+        if(!(str[i] >= 48 && str [i] <= 57)){
+            return (0);
+        }
+        i++;
+    }
+    return (1);
 }
